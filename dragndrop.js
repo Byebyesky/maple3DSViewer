@@ -16,6 +16,7 @@ dropZone.addEventListener('drop', function(e) {
     for (var i=0, file; file=files[i]; i++) {
             var reader = new FileReader();
             reader.onload = function(e2) {
+                document.getElementById('hint').style.display = "none";
                 drawMap(e2.target.result);
             }
             reader.readAsArrayBuffer(file); // start reading the file data.
